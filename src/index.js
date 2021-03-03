@@ -1,13 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import {BrowserRouter, Switch, Route } from "react-router-dom";
+// Stylesheet
+import "./index.scss";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Error404 from "./components/Error404";
+
+const Root = () => {
+  return (
+      <div>
+          <Switch>
+              <Route exact path="/" component={App} />
+             
+          </Switch>
+      </div>
+  );
+};
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+   
+    <Route render={({ location }) => (location.state && location.state.is404 ? <Error404 /> : <Root />)} />
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

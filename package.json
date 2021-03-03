@@ -22,7 +22,8 @@
     "react-text-loop": "^2.3.0",
     "react-transition-group": "^4.4.1",
     "slick-carousel": "^1.8.1",
-    "themify-icons-sass": "^1.0.1"
+    "themify-icons-sass": "^1.0.1",
+    "web-vitals": "^1.1.0"
   },
   "scripts": {
     "start": "set PORT=3006 && react-scripts start",
